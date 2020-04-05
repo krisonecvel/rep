@@ -44,6 +44,22 @@ $name_list =
             "price" => 5400,
             "image" => "img/lot-6.jpg",]
     ];
+function sum($number, $Rubl){
+    $number = ceil($number);
+
+    if ($number >=1000){
+        $price = number_format($number, 0,'.', ' ');
+    }
+    else{
+        $price = $number;
+    }
+    if ($Rubl){
+        return $price."<b class=\"rub\">p</b>";
+    }
+    else{
+        return $price;
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -136,7 +152,7 @@ $name_list =
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost">цена<b class="rub">р</b></span>
+                            <span class="lot__cost">1000<b class="rub">р</b></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
